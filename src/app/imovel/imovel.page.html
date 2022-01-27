@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ imovel.titulo }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let imagem of imovel.imagens; let ix = index">
+      <ion-img [src]="pathImgs + imagem"></ion-img>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-row>
+    <ion-col size="12" class="descricao-imovel">
+      {{ imovel.descricao }}
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+<ion-footer class="footer-imovel">
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12" class="valor-imovel">
+      {{ formataValor(imovel.valor) }}
+    </ion-col>
+  </ion-row>
+</ion-footer>

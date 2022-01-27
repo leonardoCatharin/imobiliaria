@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Lista de Imóveis
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row class="ion-align-items-center row-container">
+    <!-- evento de clique -->
+    <!-- pode ser adicionado em qualquer componente IONIC ou HTML -->
+    <ion-col size="6" *ngFor="let imovel of listaImoveis; let ix = index" (click)="goImovel(imovel)">
+      <ion-row>
+        <ion-col size="12" class="card-imovel">
+          
+          <ion-row>
+            <ion-col size="12" class="img-imovel">
+              <img [src]="pathImgs + imovel.imagens[0]"/>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12" class="titulo-imovel">
+              {{imovel.titulo}}
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12" class="valor-imovel">
+              <!-- chamada de função na view -->
+              {{ formataValor(imovel.valor) }}
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12" class="col-botao-detalhes">
+              <span class="botao-detalhes"> Detalhes </span>
+            </ion-col>
+          </ion-row>
+
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-content>
