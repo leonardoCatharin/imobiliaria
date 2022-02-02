@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Componentes adicionais </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- ### FLOATING ACTION BUTTON ### -->
+
+  <!-- Floating Action Button (FAB) top/end - ESTÁTICO -->
+  <!-- vertical - alinhamento vertical do botão -->
+  <!-- horizontal - alinhamento horizontal do botão -->
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <!-- NIVEL 1 -->
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="bottom">
+      <!-- NIVEL 2 -->
+      <!-- é necessário colocar uma lista dentro da outra para aninhar botões -->
+      <ion-fab-button>
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="bottom">
+        <ion-fab-button>
+          <ion-icon name="logo-vimeo"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab-list>
+  </ion-fab>
+
+  <!-- Floating Action Button (FAB) top/start - ESTÁTICO -->
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="arrow-forward-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="end">
+      <ion-fab-button>
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="end">
+        <ion-fab-button>
+          <ion-icon name="logo-vimeo"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab-list>
+  </ion-fab>
+
+  <!-- Floating Action Button (FAB) center/center - ESTÁTICO -->
+  <ion-fab vertical="center" horizontal="center" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="share"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="bottom">
+      <ion-fab-button><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="end">
+      <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <!-- Floating Action Button (FAB) center - DINÂMICO -->
+  <!-- <ion-fab vertical="center" horizontal="center" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="share"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list *ngFor="let botao of botoes" [side]="botao.posicao">
+      <ion-fab-button><ion-icon [name]="botao.icone"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab> -->
+  
+  <!-- ### END ### -->
+
+  <!-- ### PROGRESS BAR ### -->
+  <ion-row>
+    <ion-col size="12">
+      <ion-progress-bar [value]="value"></ion-progress-bar>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-progress-bar type="indeterminate"></ion-progress-bar>
+    </ion-col>
+  </ion-row>
+  
+  <ion-row>
+    <ion-col size="12">
+      <ion-progress-bar type="indeterminate" reversed="true"></ion-progress-bar>
+    </ion-col>
+  </ion-row>
+  <!-- ### END ### -->
+
+  <!-- ### RANGE ### -->
+  <ion-item style="margin-top: 50px;">
+    
+    <!-- observe o valor minímo e máximo do range -->
+    <!-- print para testar o valor do range -->
+    <ion-range min="20" max="80" step="20" [(ngModel)]="iluminacao">
+      <ion-icon size="small" slot="start" name="sunny"></ion-icon>
+      <ion-icon slot="end" name="sunny" (click)="printIluminacao()"></ion-icon>
+    </ion-range>
+  </ion-item>
+
+  <!-- aplicação de snaps -->
+  <!-- espaçamento demarcado a partir do valor de step -->
+  <ion-item style="margin-top: 50px;">
+    <ion-range min="20" max="80" step="10" snaps="true" [(ngModel)]="iluminacao">
+      <ion-icon size="small" slot="start" name="sunny"></ion-icon>
+      <ion-icon slot="end" name="sunny" (click)="printIluminacao()"></ion-icon>
+    </ion-range>
+  </ion-item>
+  
+  <!-- ### END ### -->
+
+</ion-content>

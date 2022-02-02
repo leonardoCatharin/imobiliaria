@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'imovel',
     loadChildren: () => import('./imovel/imovel.module').then( m => m.ImovelPageModule)
   },
+  {
+    path: 'componentesadicionais',
+    loadChildren: () => import('./componentesadicionais/componentesadicionais.module').then( m => m.ComponentesadicionaisPageModule)
+  },
 ];
 
 @NgModule({
